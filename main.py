@@ -1,7 +1,14 @@
 import discord
 import os
+import dotenv
 
-client = discord.Client()
+dotenv.load_dotenv()
+
+# Giống như các loại chatbot khác, cần khởi tạo intent kịch bản
+intents = discord.Intents.default()
+intents.message_content = True
+
+client = discord.Client(intents=intents)
 
 
 # On Bot Ready
